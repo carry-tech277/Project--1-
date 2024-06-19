@@ -1,0 +1,44 @@
+'''
+1 for stone
+-1 for paper
+0 for scissor
+'''
+print("Type:-  s for stone, p for paper, c for scissor") #
+import random  #This is a module which is used to generate random numbers
+
+computer = random.choice([1, 0, -1])
+# We use Strip and lower because we don't want to #worry about the case.
+
+youstr = (input("Enter Your Choice: ")).strip().lower() 
+
+youDict = {"s": 1, "p": -1, "c": 0}
+reverseDict = {1: "Stone", -1: "Paper", 0: "Scissor"}
+you = youDict[youstr]
+
+print(
+    f"You Choose {reverseDict[you]}\nComputer Choose {reverseDict[computer]}")
+
+if (computer == you):
+  print("It's a Draw")
+else:
+
+  if (computer == -1 and you == 1):
+    print("Ohh Noo! You Lose....")
+
+  elif (computer == -1 and you == 0):
+    print("Congrats! You Win.....")
+  
+  elif (computer == 1 and you == -1):
+    print("Congrats! You Win.....")
+
+  elif (computer == 1 and you == 0):
+    print("Ohh Noo! You Lose....")
+
+  elif (computer == 0 and you == -1):
+    print("Ohh Noo! You Lose....")
+
+  elif (computer == 0 and you == 1):
+    print("Congrats! You Win.....")
+
+  else:
+    print("Something Went Wrong")
